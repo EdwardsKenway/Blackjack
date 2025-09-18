@@ -1,5 +1,4 @@
 public abstract class Person {
-    
     protected String name;
     protected Hand hand;
 
@@ -10,8 +9,9 @@ public abstract class Person {
 
     public void drawCard(Deck deck) {
         hand.add(deck.removeCard());
-        if (hand.busted())
+        if (hand.busted()) {
             System.out.println(name + " busts with " + hand + "!");
+        }
     }
 
     public String toString() {

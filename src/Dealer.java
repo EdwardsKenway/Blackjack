@@ -1,12 +1,12 @@
 import java.util.*;
 
 public class Dealer extends Person {
-    public static void main(String[] args) { new Dealer().use(); }
+    public static void main(String[] args) { new Dealer("Dealer").use(); }
     private Deck deck;
     private LinkedList<Player> players = new LinkedList<Player>();
 
-    public Dealer() {
-        super("Dealer"); 
+    public Dealer(String name) {
+        super(name);  // Call the constructor of Person with the dealer's name
         deck = new Deck();
         players.add(new Player("Jack"));
         players.add(new Player("Jill"));
@@ -29,13 +29,6 @@ public class Dealer extends Person {
         for (Person player : players)
             player.drawCard(deck);
         drawCard(deck);
-    }
-
-    @Override
-    public void drawCard(Deck deck) {
-        hand.add(deck.removeCard());
-        if (hand.busted())
-            System.out.println("Dealer busts with " + hand + "!");
     }
 
     private void goRound() {

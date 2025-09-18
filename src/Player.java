@@ -1,7 +1,6 @@
 public class Player extends Person {
-
     public Player(String name) {
-        super(name);
+        super(name);  // Call the constructor of Person with the player's name
     }
 
     @Override
@@ -9,8 +8,8 @@ public class Player extends Person {
         char choice;
         while (!hand.busted() && (choice = readChoice()) != 's') {
             switch (choice) {
-            case 'd': drawCard(deck); break;
-            default: help(); break;
+                case 'd': drawCard(deck); break;
+                default: help(); break;
             }
         }
     }
